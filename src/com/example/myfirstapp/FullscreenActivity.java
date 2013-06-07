@@ -105,7 +105,7 @@ public class FullscreenActivity extends Activity {
     // Adding menuItems to ListView
     ListAdapter adapter = new SimpleAdapter(this, menuItems,
             R.layout.list_item,
-            new String[] { KEY_NAME, KEY_DESC, KEY_COST }, new int[] {
+            new String[] { KEY_NAME, KEY_DESC, KEY_COST,KEY_DESC}, new int[] {
                     R.id.name, R.id.desciption, R.id.cost });
 
     setListAdapter(adapter);
