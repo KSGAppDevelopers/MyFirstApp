@@ -26,9 +26,7 @@ import android.util.Log;
 public class XMLParser {
 
 	// constructor
-	public XMLParser() {
 
-	}
 
 	/**
 	 * Getting XML from URL making HTTP request
@@ -102,14 +100,11 @@ public class XMLParser {
 	     }
 	     return "";
 	 }
-	 
-	 /**
-	  * Getting node value
-	  * @param Element node
-	  * @param key string
-	  * */
-	 public String getValue(Element item, String str) {		
-			NodeList n = item.getElementsByTagName(str);		
-			return this.getElementValue(n.item(0));
-		}
+	 public String getValue(Element item, String str) {      
+		    NodeList n = item.getElementsByTagName(str);        
+		    return this.getElementValue(n.item(0));
+	 }
+		 
+		
+
 }
