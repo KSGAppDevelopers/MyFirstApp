@@ -6,8 +6,6 @@ import java.util.HashMap;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 
-import com.androidhive.xmlparsing.XMLParser;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
@@ -21,7 +19,7 @@ import android.widget.TextView;
 import android.view.View;
 import android.view.View.OnClickListener;
  
-public class FullscreenActivity extends Activity {
+public class FullscreenActivity extends Activity implements View.OnClickListener {
  
 	Button button;
 	
@@ -29,21 +27,24 @@ public class FullscreenActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_fullscreen);
-		addListenerOnButton();
+		button = (Button) findViewById(R.id.button1);
+		button.setOnClickListener(this);
 	}
  
-	public void addListenerOnButton() {
- 
-		button = (Button) findViewById(R.id.button1);			//button1
-		button.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-			  Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.ksg-leipzig.de/aktuelles-m/articles/aktuelles-m.html"));
-			  startActivity(browserIntent);
-			}
- 
-		});
-		button = (Button) findViewById(R.id.button2);			//button2 
+	public void button1Click() {
+		startActivity(new Intent("com.example.myfirstapp.ParseXMLDemo"));
+	}
+		public void onClick(View v) {
+			  switch (v.getId())
+			  {
+			  case R.id.button1:
+			  button1Click();
+			  break;
+			  }
+		
+		
+		
+		//button = (Button) findViewById(R.id.button2);			//button2 
  		button.setOnClickListener(new OnClickListener() {
  			@Override
 			public void onClick(View v) {
@@ -71,6 +72,11 @@ public class FullscreenActivity extends Activity {
  		});
 	
 	}
+
+
+	// TODO Auto-generated method stub
+		
+	}/*
 	static final String URL = "http://api.androidhive.info/pizza/?format=xml";
     // XML node keys
     static final String KEY_ITEM = "item"; // parent node
@@ -105,8 +111,8 @@ public class FullscreenActivity extends Activity {
     // Adding menuItems to ListView
     ListAdapter adapter = new SimpleAdapter(this, menuItems,
             R.layout.list_item,
-            new String[] { KEY_NAME, KEY_DESC, KEY_COST,KEY_DESC}, new int[] {
-                    R.id.name, R.id.desciption, R.id.cost });
+            new String[] { KEY_NAME, KEY_DESC}, new int[] {
+                    R.id.name, R.id.desciption});
 
     setListAdapter(adapter);
 
@@ -133,3 +139,4 @@ public class FullscreenActivity extends Activity {
     });
 }
 
+*/
