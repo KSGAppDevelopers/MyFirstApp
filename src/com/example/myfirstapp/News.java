@@ -21,7 +21,7 @@ import android.widget.TextView;
 import android.view.View;
 import android.view.View.OnClickListener;
  
-public class FullscreenActivity extends Activity {
+public class News extends Activity {
  
 	Button button;
 	
